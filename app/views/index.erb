@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Welcome to RESTful CRUD!</h1>
+  <h3>Create Read Update Delete</h3>
+
+  <div id="form">
+    <form action="/" method="post">
+      <input type="text" name="title" placeholder="Title"><br><br>
+      <textarea name="content"></textarea><br><br>
+      <input type="submit" value="Create">
+    </form>
+  </div>
+  
+  <% if @notes.any? %>
+
+  <div id="notes">
+    <h2>Here are the notes you've created:</h2>
+    <ul>
+      <% @notes.each do |note| %>
+        <li>
+          <h3><%= note.title %> <a href="/note/<%= note.id %>">Edit</a></h3>
+
+          
+          <!-- <form action="/" method="get">
+            <input type="submit" value="Update">
+          </form>
+
+          <form action="/delete" method="post">
+            <input type="hidden" name="note_id" value="<%= note.id %>">
+            <input type="submit" value="Delete">
+          </form> -->
+
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <% end %>

@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Welcome to your note, entitled <%=@note.title %>!</h1>
+  <h3>Read, Update, or Delete this note here!</h3>
+
+  <h2><%= @note.title %>: <%= @note.content %></h2>
+  
+  <div id="form">
+    <form action="/update/<%= @note.id %>" method="post">
+      <input type="text" name="title" value="<%= @note.title %>"><br><br>
+      <textarea name="content"><%= @note.content %></textarea><br><br>
+      <input type="submit" value="Done Editting">
+    </form><br>
+
+    <form action="/delete/<%= @note.id %>" method="post">
+      <input type="submit" value="Delete">
+    </form>
+  </div>
+</div>
+ 
+  
+  
+
+
